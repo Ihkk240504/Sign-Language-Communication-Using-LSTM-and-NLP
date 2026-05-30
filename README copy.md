@@ -2,6 +2,7 @@
 ## Overview:
 A real-time sign language recognition system that captures video through a webcam, extracts hand pose keypoints using MediaPipe, and uses a deep learning model to classify the performed sign. The system then translates these recognized signs into natural language sentences.
 
+![image](https://github.com/user-attachments/assets/dd16ee86-e7bc-4b04-bc7c-dd1638814ea2)
 
 # Key Components:
 ### Data Collection & Preprocessing
@@ -52,6 +53,9 @@ For real-time sign recognition, MediaPipe is used to extract keypoints from a li
 
 
 # Demo video:
+
+https://github.com/user-attachments/assets/e65b60b5-0f8f-4ded-a5ec-21b88582756a
+
 
 # Output Graph:
 ![image](https://github.com/user-attachments/assets/ea9c5429-6fae-4e32-8ba4-9bfbc2c365bd)
