@@ -2,10 +2,12 @@
 ## Overview:
 A real-time sign language recognition system that captures video through a webcam, extracts hand pose keypoints using MediaPipe, and uses a deep learning model to classify the performed sign. The system then translates these recognized signs into natural language sentences.
 
+<img width="629" height="500" alt="image" src="https://github.com/user-attachments/assets/c4c2e7e9-17c8-4999-a233-4ac6f91b048a" />
 
 # Key Components:
 ### Data Collection & Preprocessing
 The input videos of sign language gestures are manually curated and processed into 60-frame sequences. Each frame originally contains 1662 landmark values, but only the hand keypoints are used for training—specifically, 21 landmarks per hand (totaling 63 values per hand), along with 2 presence flags. To handle missing hand data, neutral poses are generated using clustering techniques and used to mask the gaps. This ensures consistent input dimensions and reduces noise during training.
+
 
 
 ## Model Architecture
@@ -43,15 +45,11 @@ num_classes = len(class_names)
 model = build_lstm_model(input_shape, num_classes)
 ```
 
-
 ## Real-Time Inference
 For real-time sign recognition, MediaPipe is used to extract keypoints from a live video feed. The system maintains a rolling window of 60 frames and continuously predicts signs based on this sequence. To avoid false positives, it excludes predictions of "no gesture" when idle. The list of valid sign classes is dynamically loaded from the dataset folder structure. Once predictions are made, the system also includes a Natural Language Translation component that converts raw sign sequences like "I GO SCHOOL" into grammatically correct English, such as "I am going to school", adapting tense and phrasing based on context.
  
-  
-
-
-
 # Demo video:
+https://github.com/user-attachments/assets/437a461e-f77e-406b-8483-b126feb19219
 
 # Output Graph:
 ![image](https://github.com/user-attachments/assets/ea9c5429-6fae-4e32-8ba4-9bfbc2c365bd)
